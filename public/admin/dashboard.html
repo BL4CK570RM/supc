@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — SUPC CSE Fest 2026</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">SUPC <span>Admin</span></div>
+            <ul class="nav-links">
+                <li><a href="/admin/dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="/admin/events.html">Manage Events</a></li>
+                <li><a href="/admin/payments.html">Verify Payments</a></li>
+                <li><a href="/dashboard.html">User View</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-heading">
+            <h1>Admin <em>Dashboard</em></h1>
+            <p>Overview of registrations, payments, and event statistics.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Users</div>
+                <div class="stat-value" id="totalUsers">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Payments</div>
+                <div class="stat-value" id="totalPayments">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Revenue</div>
+                <div class="stat-value" id="totalRevenue">৳0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Pending Payments</div>
+                <div class="stat-value" id="pendingPayments">0</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Event Statistics</h2>
+            <div id="eventStats">
+                <p class="loading">Loading statistics...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin/admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Science Fest 2026</title>
+    <link rel="stylesheet" href="./css/payment.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Science Fest 2026</div>
+            <ul class="nav-links">
+                <li><a href="/dashboard.html">Dashboard</a></li>
+                <li><a href="/events.html">Events</a></li>
+                <li><a href="/history.html">Payment History</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card payment-card">
+            <h2 class="payment-title">Payment Details</h2>
+            
+            <div id="alertMessage" class="alert-message"></div>
+            
+            <div id="adminPaymentInfo" class="alert alert-info admin-payment-info">
+                Loading payment information...
+            </div>
+            
+            <div class="card selected-events-card">
+                <h4>Your Selected Events</h4>
+                <div id="selectedEventsList"></div>
+                <hr>
+                <p><strong>Total Amount: ৳<span id="totalAmount">0</span></strong></p>
+            </div>
+            
+            <form id="paymentForm" class="payment-form">
+                <div class="form-group">
+                    <label for="payment_method">Payment Method</label>
+                    <select id="payment_method" name="payment_method" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="bkash">bKash</option>
+                        <option value="nagad">Nagad</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="account_number">Your bKash/Nagad Number</label>
+                    <input type="tel" id="account_number" name="account_number" required placeholder="+8801XXXXXXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label for="transaction_id">Transaction ID (TSID)</label>
+                    <input type="text" id="transaction_id" name="transaction_id" required placeholder="8-20 characters">
+                    <small id="tsidError" class="tsid-error">Transaction ID already exists</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">Submit Payment</button>
+            </form>
+            
+            <p class="payment-note">
+                After submission, your payment will be verified by admin. You'll receive confirmation within 24 hours.
+            </p>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="confirmation-modal">
+        <div class="confirmation-content">
+            <div id="confirmationIcon" class="confirmation-pending">⏳</div>
+            <h3 id="confirmationTitle">Processing Payment...</h3>
+            <div id="loadingSpinner" class="loading-spinner"></div>
+            <p id="confirmationMessage">Please wait while we process your payment...</p>
+            <button id="confirmationBtn" class="btn btn-primary confirmation-btn">OK</button>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/payment.js"></script>
+</body>
+</html>

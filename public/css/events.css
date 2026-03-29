@@ -1,0 +1,263 @@
+        :root {
+            --accent: #00e5c3;
+            --accent2: #ff4d6d;
+            --deep: #030b14;
+            --surface: #0a1628;
+            --surface2: #101f35;
+            --text: #e8f4ff;
+            --muted: #7a9abf;
+            --card-border: rgba(0, 229, 195, 0.15);
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--deep);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.65;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 229, 195, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 195, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body > * { position: relative; z-index: 1; }
+
+        /* ---- HEADER ---- */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(3, 11, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 6px 14px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            border-radius: 6px;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a[href="/events.html"] {
+            color: var(--text);
+            background: rgba(0, 229, 195, 0.08);
+        }
+
+        .nav-links li a[href="/events.html"] {
+            color: var(--accent);
+        }
+
+        #logoutBtn {
+            color: var(--accent2) !important;
+        }
+
+        /* ---- CONTAINER / LAYOUT ---- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 5rem;
+        }
+
+        /* Page heading */
+        .page-heading {
+            margin-bottom: 2rem;
+        }
+
+        .page-heading h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: 0.06em;
+            color: var(--text);
+            line-height: 1;
+        }
+
+        .page-heading h1 em {
+            color: var(--accent);
+            font-style: normal;
+        }
+
+        .page-heading p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .row { grid-template-columns: 1fr; }
+        }
+
+        /* ---- CARDS ---- */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 1.75rem 2rem;
+        }
+
+        .card h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            letter-spacing: 0.06em;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        /* ---- CART SUMMARY ---- */
+        .cart-summary {
+            background: var(--surface);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 1.75rem;
+            position: sticky;
+            top: 88px;
+        }
+
+        .cart-summary h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cart-summary p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        #cartItems {
+            min-height: 60px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--card-border);
+            margin: 1rem 0;
+        }
+
+        .cart-summary > p strong {
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        #totalAmount {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* ---- EVENTS LIST (JS-rendered) ---- */
+        #eventsList p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* ---- BTN SYSTEM ---- */
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--deep);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: #00ffd8;
+            border-color: #00ffd8;
+        }
+
+        .btn-success {
+            background: var(--accent);
+            color: var(--deep);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 13px 24px;
+            width: 100%;
+            margin-top: 1rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .btn-success:hover {
+            background: #00ffd8;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid rgba(0, 229, 195, 0.25);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }

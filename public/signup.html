@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Science Fest 2026</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Science Fest 2026</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/login.html">Login</a></li>
+                <li><a href="/signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card signup-card">
+            <h2 class="signup-title">Create Your Account</h2>
+            
+            <div id="alertMessage" class="signup-alert-message"></div>
+            
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student_id">Student ID</label>
+                    <input type="text" id="student_id" name="student_id" required placeholder="e.g., ABC123">
+                    <small id="idError" class="signup-error-message">ID already exists</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="BSc in CSE">BSc in CSE</option>
+                        <option value="BSc in Civil Engineering">BSc in Civil Engineering</option>
+                        <option value="BSc in EEE">BSc in EEE</option>
+                        <option value="BSc in Mechanical Engineering">BSc in Mechanical Engineering</option>
+                        <option value="BSc in Textile Engineering">BSc in Textile Engineering</option>
+                        <option value="BSc in Naval Architecture & Marine Engineering">BSc in Naval Architecture & Marine Engineering</option>
+                        <option value="BSc in Fashion Design & Technology">BSc in Fashion Design & Technology</option>
+                        <option value="BSc in Apparel Manufacture & Technology">BSc in Apparel Manufacture & Technology</option>
+                        <option value="Bachelor of Architecture">Bachelor of Architecture</option>
+                        <option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
+                        <option value="Bachelor of Laws (LLB)">Bachelor of Laws (LLB)</option>
+                        <option value="BA (Hons) in Bangla">BA (Hons) in Bangla</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+8801XXXXXXXXX">
+                    <small id="phoneError" class="signup-error-message">Phone number already registered</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <small id="emailError" class="signup-error-message">Email already registered</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                    <small id="passwordError" class="signup-error-message">Passwords do not match</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary signup-submit-btn">Signup</button>
+            </form>
+            
+            <p class="signup-login-link">
+                Already have an account? <a href="/login.html">Login here</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>

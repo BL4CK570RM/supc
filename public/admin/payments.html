@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Payments - Admin</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin-payments.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Admin Panel - Science Fest 2026</div>
+            <ul class="nav-links">
+                <li><a href="/admin/dashboard.html">Dashboard</a></li>
+                <li><a href="/admin/events.html">Manage Events</a></li>
+                <li><a href="/admin/payments.html">Verify Payments</a></li>
+                <li><a href="/dashboard.html">User View</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Payment Verification</h2>
+            <div class="payments-filter-bar">
+                <label>Filter by Status: </label>
+                <select id="statusFilter">
+                    <option value="">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="error">Error</option>
+                </select>
+                <button id="applyFilterBtn" class="btn btn-primary">Apply Filter</button>
+            </div>
+            
+            <div id="paymentsList">
+                <p>Loading payments...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for feedback -->
+    <div id="feedbackModal" class="feedback-modal">
+        <h3>Add Feedback</h3>
+        <textarea id="feedbackText" rows="4" class="feedback-text"></textarea>
+        <div>
+            <button id="submitFeedbackBtn" class="btn btn-primary">Submit</button>
+            <button id="closeFeedbackModalBtn" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+
+    <script src="/js/admin/admin-payments.js"></script>
+</body>
+</html>

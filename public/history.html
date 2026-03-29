@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History — SUPC CSE Fest 2026</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">SUPC <span>CSE Fest 2026</span></div>
+            <ul class="nav-links">
+                <li><a href="/dashboard.html">Dashboard</a></li>
+                <li><a href="/events.html">Events</a></li>
+                <li><a href="/history.html" class="active">Payment History</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-heading">
+            <h1>Payment <em>History</em></h1>
+            <p>A record of all your registrations and transactions.</p>
+        </div>
+
+        <div class="card">
+            <h2>All Transactions</h2>
+            <div id="historyList">
+                <p class="loading">Loading payment history...</p>
+            </div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/history.js"></script>
+</body>
+</html>

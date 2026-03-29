@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Science Fest 2026</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Science Fest 2026</div>
+            <ul class="nav-links">
+                <li><a href="/dashboard.html">Dashboard</a></li>
+                <li><a href="/events.html">Events</a></li>
+                <li><a href="/history.html">Payment History</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Welcome, <span id="userName"></span>!</h2>
+            <div class="dashboard-user-grid">
+                <div>
+                    <strong>Student ID:</strong> <span id="studentId"></span>
+                </div>
+                <div>
+                    <strong>Department:</strong> <span id="department"></span>
+                </div>
+                <div>
+                    <strong>Email:</strong> <span id="userEmail"></span>
+                </div>
+                <div>
+                    <strong>Phone:</strong> <span id="userPhone"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Your Registered Events</h3>
+            <div id="registeredEvents">
+                <p>Loading your registered events...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
